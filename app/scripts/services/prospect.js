@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr')
+angular.module('problemhunt')
 .factory('Prospect', function(Restangular) {
   return {
     create: function(params, callback) {

@@ -3,7 +3,7 @@
 describe('controllers', function(){
   var scope;
 
-  beforeEach(module('hangr'));
+  beforeEach(module('problemhunt'));
 
   beforeEach(inject(function($rootScope) {
   	scope = $rootScope.$new();

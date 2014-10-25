@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr')
+angular.module('problemhunt')
 .factory('Auth', function(Restangular, $cookieStore, ACCESS_LEVELS) {
   var _token = $cookieStore.get('token');
   var setToken = function(token) {

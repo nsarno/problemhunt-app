@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr')
+angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
   $stateProvider.state('login', {
     url: '/login',

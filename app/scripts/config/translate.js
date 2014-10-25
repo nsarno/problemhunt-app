@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr')
+angular.module('problemhunt')
 .config(function($translateProvider) {
   $translateProvider.translations('en', {
     'uvp' : 'Fashion retail, done right.',

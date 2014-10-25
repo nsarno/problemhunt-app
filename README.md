@@ -1,10 +1,10 @@
-hangr-app
+problemhunt-app
 =========
 
 Scaffolded with Yeoman and gulp-angular generator.
 
 ```
-➜ problemhunt-app yo gulp-angular hangr
+➜ problemhunt-app yo gulp-angular problemhunt
 
      _-----_
     |       |    .--------------------------.

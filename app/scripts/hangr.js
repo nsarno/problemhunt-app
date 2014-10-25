@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr', [
+angular.module('problemhunt', [
     'ngCookies',
     'restangular',
     'ui.router',
@@ -12,7 +12,7 @@ angular.module('hangr', [
   pub: 1,
 user: 2
 })
-//.constant('BASE_URL', 'https://hangr-api.herokuapp.com')
+//.constant('BASE_URL', 'https://problemhunt-api.herokuapp.com')
 .constant('BASE_URL', 'http://0.0.0.0:8080')
 .config(function($urlRouterProvider, $locationProvider, RestangularProvider, BASE_URL) {
 
@@ -21,7 +21,7 @@ user: 2
   // use the HTML5 History API
   //$locationProvider.html5Mode(true);
 
-  // Set base url of Hangr API
+  // Set base url of problemhunt API
   RestangularProvider.setBaseUrl(BASE_URL);
 
   // Add interceptor to extract embbeded response

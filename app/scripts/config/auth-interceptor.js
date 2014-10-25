@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('hangr')
+angular.module('problemhunt')
 .factory('AuthInterceptor', function ($rootScope, $q, $cookieStore, $injector, BASE_URL) {
 	return {
 		request: function (config) {
@@ -42,7 +42,7 @@ angular.module('hangr')
 	};
 });
 
-angular.module('hangr')
+angular.module('problemhunt')
 .config(function ($httpProvider) {
 	  $httpProvider.interceptors.push('AuthInterceptor');
 });
