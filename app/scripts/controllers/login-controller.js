@@ -1,0 +1,20 @@
+'use strict';
+
+angular.module('hangr')
+.config(function($stateProvider, ACCESS_LEVELS) {
+  $stateProvider.state('login', {
+    url: '/login',
+    templateUrl: 'partials/login.html',
+    controller: 'LoginController',
+    access_level: ACCESS_LEVELS.pub
+  });
+})
+.controller('LoginController', function($scope, $rootScope, $state, Auth) {
+  $scope.login = function(params) {
+    Auth.login(params, function() {
+      $rootScope.user = { email: $scope.user.email };
+      $state.go('dashboard'); 
+    });
+  };
+});
+
