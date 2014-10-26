@@ -20,6 +20,7 @@ angular.module('problemhunt')
       $scope.organization = organization;
     }); 
   };
+
   fetchOrganization();
 
   $scope.submitProblem = function(problem_params) {
@@ -28,6 +29,18 @@ angular.module('problemhunt')
         fetchOrganization();
       }
     );
+  };
+
+  $scope.upvote = function(problem) {
+    problem.upvoted = true;
+    problem.upvote_count += 1;
+    PBHunt.upvote(problem);
+  };
+
+  $scope.downvote = function(problem) {
+    problem.upvoted = false;
+    problem.upvote_count -= 1;
+    PBHunt.downvote(problem);
   };
 });
 

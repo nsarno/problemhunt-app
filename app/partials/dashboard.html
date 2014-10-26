@@ -14,7 +14,9 @@
   <div class="container">
     <h1>Hunt problems @{{ organization.name }}</h1>
     <ul ng-repeat="problem in organization.problems">
-      <li>{{ problem.description }}</li>
+      <li>{{ problem.description }} ({{ problem.upvote_count }})</li>
+      <button ng-show="!problem.upvoted" ng-click="upvote(problem)" class="btn btn-primary">Upvote</button>
+      <button ng-show="problem.upvoted" ng-click="downvote(problem)" class="btn btn-primary">Upvoted</button>
     </ul>
     <div class="col col-lg-6"</div>
       <h3>You're problem is not in the list? Let us know...</h3>
