@@ -3,9 +3,15 @@
 angular.module('problemhunt')
 .factory('Auth', function(Restangular, $cookieStore, ACCESS_LEVELS) {
   var _token = $cookieStore.get('token');
+  var _user = $cookieStore.get('user');
   var setToken = function(token) {
       _token = token;
       $cookieStore.put('token', _token);
+  };
+
+  var setUser = function(user) {
+    _user = user;
+    $cookieStore.put('user', _user);
   };
 
   return {
@@ -16,9 +22,13 @@ angular.module('problemhunt')
     login: function(params, callback) {
       Restangular.all('auth').post({ user: params }).then(
         function(response) {
-          console.log(response);
+          console.log('token', response.token);
           setToken(response.token);
-          callback();
+          Restangular.one('users', response.user_id).get().then(function(response) {
+            console.log('user', response.user);
+            setUser(response.user);
+            callback();
+          });
         }
       );
     },
@@ -29,9 +39,17 @@ angular.module('problemhunt')
       return _token;
     },
 
+    setUser: setUser,
+
+    user: function() {
+      return _user;
+    },
+
     logout: function() {
       _token = null;
+      _user = null;
       $cookieStore.remove('token');
+      $cookieStore.remove('user');
     },
 
     isAuthenticated: function() {

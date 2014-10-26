@@ -8,10 +8,12 @@ angular.module('problemhunt')
     controller: 'DashboardController',
     access_level: ACCESS_LEVELS.user
   });
-}).controller('DashboardController', function($scope, Auth, $state) {
+}).controller('DashboardController', function($scope, Auth, $state, PBHunt) {
   $scope.logout = function() {
     Auth.logout();
     $state.go('home');
   };
+
+  $scope.organization = PBHunt.getOrganization(); 
 });
 
