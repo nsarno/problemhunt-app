@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('problemhunt', [
+    'ngTouch',
     'ngCookies',
     'restangular',
     'ui.router',
