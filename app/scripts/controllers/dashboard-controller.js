@@ -2,9 +2,9 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('dashboard', {
-    url: '/dashboard',
-    templateUrl: 'partials/dashboard.html',
+  .state('submit', {
+    url: '/submit',
+    templateUrl: 'partials/submit.html',
     controller: 'DashboardController',
     access_level: ACCESS_LEVELS.user
   });
@@ -15,9 +15,11 @@ angular.module('problemhunt')
   };
 
   var fetchOrganization = function() {
+    
     PBHunt.getOrganization(function(organization) {
       console.log('organization', organization);
       $scope.organization = organization;
+      $scope.current_problem = PBHunt.nextProblem();
     }); 
   };
 
@@ -32,6 +34,7 @@ angular.module('problemhunt')
   };
 
   $scope.upvote = function(problem) {
+    $scope.current_problem = PBHunt.nextProblem();
     problem.upvoted = true;
     problem.upvote_count += 1;
     PBHunt.upvote(problem);
@@ -41,6 +44,10 @@ angular.module('problemhunt')
     problem.upvoted = false;
     problem.upvote_count -= 1;
     PBHunt.downvote(problem);
+  };
+
+  $scope.next = function() {
+    $scope.current_problem = PBHunt.nextProblem();
   };
 });
 

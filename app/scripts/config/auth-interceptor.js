@@ -12,8 +12,6 @@ angular.module('problemhunt')
 		},
 		response: function (response) {
 		  var $state = $injector.get('$state');
-		  console.log('>>', $state);
-		  console.log('>>', $state.current);
 			return response || $q.when(response);
 		},
 	  responseError: function (rejection) {

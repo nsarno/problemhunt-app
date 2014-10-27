@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
 		<base href="/">
-    <title>problemhunt</title>
+    <title>Problem Hunt</title>
     <meta name="description" content="Fashion discovery, done right.">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp,app}) styles/vendor.css -->
@@ -14,7 +14,6 @@
 
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/pages/home.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/modernizr.js -->
@@ -29,13 +28,15 @@
     <div class="content" ui-view></div>
 
     <!-- Google Analytics -->
+    <!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-55747447-1', 'auto');
+      ga('create', 'XXXXXXXX', 'auto');
     </script>
+    -->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -72,13 +73,16 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/problemhunt.js"></script>
+
     <script src="scripts/config/translate.js"></script>
     <script src="scripts/config/auth-interceptor.js"></script>
+
     <script src="scripts/services/auth.js"></script> 
-    <script src="scripts/services/pbhunt.js"></script> 
-    <script src="scripts/controllers/home-controller.js"></script>
+    <script src="scripts/services/problem.js"></script> 
+
     <script src="scripts/controllers/login-controller.js"></script>
-    <script src="scripts/controllers/dashboard-controller.js"></script>
+    <script src="scripts/controllers/cards-controller.js"></script>
+    <script src="scripts/controllers/submit-controller.js"></script>
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->

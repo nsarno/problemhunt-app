@@ -22,10 +22,8 @@ angular.module('problemhunt')
     login: function(params, callback) {
       Restangular.all('auth').post({ user: params }).then(
         function(response) {
-          console.log('token', response.token);
           setToken(response.token);
           Restangular.one('users', response.user_id).get().then(function(response) {
-            console.log('user', response.user);
             setUser(response.user);
             callback();
           });
@@ -59,14 +57,13 @@ angular.module('problemhunt')
 })
 .run(function($rootScope, $state, Auth) {
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
-    console.log('Trying to access state with level', toState.access_level);
     if (!Auth.isAuthorized(toState.access_level)) {
       evt.preventDefault();
       $state.go('login');
     }
     if (toState.name === 'login' && Auth.isAuthenticated()) {
       evt.preventDefault();
-      $state.go('dashboard');
+      $state.go('cards');
     }
   });
 });

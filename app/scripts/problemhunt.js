@@ -7,16 +7,19 @@ angular.module('problemhunt', [
     'angulartics',
     'angulartics.google.analytics',
     'pascalprecht.translate'
-    ])
+])
+
 .constant('ACCESS_LEVELS', {
   pub: 1,
-user: 2
+  user: 2
 })
+
 //.constant('BASE_URL', 'https://problemhunt-api.herokuapp.com')
 .constant('BASE_URL', 'http://0.0.0.0:8080')
+
 .config(function($urlRouterProvider, $locationProvider, RestangularProvider, BASE_URL) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/login');
 
   // use the HTML5 History API
   //$locationProvider.html5Mode(true);
