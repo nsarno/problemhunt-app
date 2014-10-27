@@ -40,7 +40,7 @@ angular.module('problemhunt')
     setUser: setUser,
 
     user: function() {
-      return _user;
+      return Restangular.one('users', _user.id).get();
     },
 
     logout: function() {

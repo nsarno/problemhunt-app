@@ -10,8 +10,13 @@ angular.module('problemhunt')
   });
 })
 .controller('CardController', function($scope, Problem, Auth) {
-  $scope.organization = Auth.user().organization;
-  $scope.current_problem = Problem.next();
+  Auth.user().then(function(response) {
+    $scope.organization = response.user.organization;
+  });
+
+  Problem.setupCards(function() {
+    $scope.current_problem = Problem.next();
+  });
 
   $scope.upvote = function(problem) {
     Problem.upvote(problem);

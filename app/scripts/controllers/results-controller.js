@@ -10,7 +10,14 @@ angular.module('problemhunt')
   });
 })
 .controller('ResultsController', function($scope, Auth, Problem) {
-  $scope.organization = Auth.user().organization;
-  $scope.tops = Problem.tops();
-  console.log($scope.tops);
+  Auth.user().then(function(response) {
+    $scope.organization = response.user.organization;  
+  });
+  Problem.tops(function(tops) {
+    $scope.tops = tops;
+  });
+
+  $scope.logout = function() {
+    Auth.logout();
+  };
 });

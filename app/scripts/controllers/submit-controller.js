@@ -10,10 +10,16 @@ angular.module('problemhunt')
   });
 })
 .controller('SubmitController', function($scope, $state, Auth, Problem) {
-  $scope.organization = Auth.user().organization;
+  Auth.user().then(function(response) {
+    $scope.organization = response.user.organization;
+  });
 
   $scope.submit = function(problem) {
     Problem.submit(problem);
+    $state.go('results');
+  };
+
+  $scope.ignore = function() {
     $state.go('results');
   };
 });
