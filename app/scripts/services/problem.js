@@ -46,7 +46,7 @@ angular.module('problemhunt')
       Auth.user().then(function(response) {
         callback(_.sortBy(response.user.organization.problems, function(pb) {
           return -pb.upvote_count; 
-        }).slice(0, 3)); 
+        }).slice(0, 15)); 
       });
     }
   };
