@@ -1,17 +1,16 @@
 <div class="container">
-
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
       <span class="navbar-brand">Problem Hunt @{{ organization.name }}</span>
     </div>
   </nav>
-  <div class="row">
+  <div ng-repeat="top in tops" class="row">
     <div class="col-xs-1"></div>
     <div class="col-xs-10 mt-1">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h2 class="panel-title">
-            <small>{{ current_problem.upvote_count }}</small>
+            <small>{{ top.upvote_count }}</small>
           </h2>
         </div>
         <div class="panel-body">
@@ -19,24 +18,11 @@
           <div class="row">
             <div class class="col-xs-12">
               <p class="text-justify ph-1">
-                {{ current_problem.description }}
+              {{ top.description }}
               </p>
             </div>
           </div>
 
-
-          <div class="row">
-            <div class="col-xs-6">
-              <button ng-click="upvote(current_problem)" class="btn btn-success btn-block">
-                Definitely
-              </button>
-            </div>
-            <div class="col-xs-6">
-              <button ng-click="ignore()" class="btn btn-danger btn-block">
-                Meh
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

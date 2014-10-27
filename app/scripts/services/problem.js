@@ -21,6 +21,13 @@ angular.module('problemhunt')
       Restangular.all('problems').post({problem: problem}).then(function(response) {
         console.log(response);
       });
+    },
+
+    tops: function() {
+      return _.sortBy(Auth.user().organization.problems, function(pb) {
+        return -pb.upvote_count;
+      }).slice(0, 3); 
     }
   };
 });
+

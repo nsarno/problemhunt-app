@@ -9,13 +9,12 @@ angular.module('problemhunt')
     access_level: ACCESS_LEVELS.user
   });
 })
-.controller('SubmitController', function($scope, Auth, Problem) {
+.controller('SubmitController', function($scope, $state, Auth, Problem) {
   $scope.organization = Auth.user().organization;
 
   $scope.submit = function(problem) {
-    console.log('submit');
     Problem.submit(problem);
-    $scope.submitted = true;
+    $state.go('results');
   };
 });
 
