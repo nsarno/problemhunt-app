@@ -32,6 +32,10 @@ Utilities class
     border: none;
   }
 
+  .navbar-fixed-bottom {
+    cursor: pointer;
+  }
+
   .navbar-header {
     padding-right: 5px; /* Are these too close to edge for touch? */
     padding-left: 5px;
