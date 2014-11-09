@@ -2,11 +2,11 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('contribute', {
-    url: '/contribute',
+  $stateProvider.state('app.submit', {
+    url: '/submit',
     templateUrl: 'partials/submit.html',
     controller: 'SubmitController',
-    access_level: ACCESS_LEVELS.user
+    accessLevel: ACCESS_LEVELS.user
   });
 })
 .controller('SubmitController', function($scope, $state, Auth, Problem) {
@@ -16,11 +16,11 @@ angular.module('problemhunt')
 
   $scope.submit = function(problem) {
     Problem.submit(problem);
-    $state.go('results');
+    $state.go('app.results');
   };
 
   $scope.ignore = function() {
-    $state.go('results');
+    $state.go('app.results');
   };
 });
 

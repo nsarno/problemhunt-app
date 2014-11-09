@@ -2,11 +2,11 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('cards', {
+  $stateProvider.state('app.cards', {
     url: '/cards',
     templateUrl: 'partials/card.html',
     controller: 'CardController',
-    access_level: ACCESS_LEVELS.user
+    accessLevel: ACCESS_LEVELS.user
   });
 })
 .controller('CardController', function($scope, Problem, Auth) {
@@ -15,16 +15,16 @@ angular.module('problemhunt')
   });
 
   Problem.setupCards(function() {
-    $scope.current_problem = Problem.next();
+    $scope.currentProblem = Problem.next();
   });
 
   $scope.upvote = function(problem) {
     Problem.upvote(problem);
-    $scope.current_problem = Problem.next();
+    $scope.currentProblem = Problem.next();
   };
 
-  $scope.ignore = function(problem) {
-    $scope.current_problem = Problem.next();
+  $scope.ignore = function() {
+    $scope.currentProblem = Problem.next();
   };
 });
 

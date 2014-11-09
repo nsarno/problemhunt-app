@@ -15,15 +15,13 @@ angular.module('problemhunt', [
   user: 2
 })
 
-.constant('BASE_URL', 'https://problemhunt.herokuapp.com')
-//.constant('BASE_URL', 'http://0.0.0.0:8080')
+//.constant('BASE_URL', 'https://problemhunt.herokuapp.com')
+.constant('BASE_URL', 'http://0.0.0.0:8080')
 
-.config(function($urlRouterProvider, $locationProvider, RestangularProvider, BASE_URL) {
+.config(function($urlRouterProvider, $locationProvider, RestangularProvider,
+      $stateProvider, BASE_URL) {
 
-  $urlRouterProvider.otherwise('/login');
-
-  // use the HTML5 History API
-  //$locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise('/home');
 
   // Set base url of problemhunt API
   RestangularProvider.setBaseUrl(BASE_URL);
@@ -31,7 +29,6 @@ angular.module('problemhunt', [
   // Add interceptor to extract embbeded response
   RestangularProvider.addResponseInterceptor(function (data, operation, what) {
     if (operation === 'getList') {
-      console.log('GETLIST');
       return data[what];
     }
     return data;

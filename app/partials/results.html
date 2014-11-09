@@ -1,39 +1,30 @@
-<!DOCTYPE html>
-<div class="container">
+<div ng-repeat="top in tops" class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <small><i class="glyphicon glyphicon-user"></i> {{ top.upvote_count }} upvoted this</small>
+        </h2>
+      </div>
+      <div class="panel-body">
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-      <span class="navbar-brand">Problem Hunt @{{ organization.name }}</span>
-    </div>
-  </nav>
-  <div ng-repeat="top in tops" class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">
-            <small><i class="glyphicon glyphicon-user"></i> {{ top.upvote_count }} upvoted this</small>
-          </h2>
-        </div>
-        <div class="panel-body">
-
-          <div class="row">
-            <div class class="col-xs-12">
-              <p class="text-justify ph-1">
-              {{ top.description }}
-              </p>
-            </div>
+        <div class="row">
+          <div class class="col-xs-12">
+            <p class="text-justify ph-1">
+            {{ top.description }}
+            </p>
           </div>
-
         </div>
+
       </div>
     </div>
-    <div class="col-xs-1"></div>
   </div>
-  <nav ui-sref="cards" class="navbar navbar-default navbar-green navbar-fixed-bottom" role="navigation">
-    <div class="container">
-      <p class="navbar-text text-center text-white"><strong>Contribute</strong></p>
-    </div>
-  </nav>
+  <div class="col-xs-1"></div>
 </div>
+<nav ui-sref="app.cards" class="navbar navbar-default navbar-green navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    <p class="navbar-text text-center text-white"><strong>Contribute</strong></p>
+  </div>
+</nav>
 

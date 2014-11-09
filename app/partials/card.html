@@ -1,40 +1,32 @@
-<div class="container">
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10 mt-1">
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-      <span class="navbar-brand">Problem Hunt @{{ organization.name }}</span>
-    </div>
-  </nav>
-  <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10 mt-1">
-      <div class="panel panel-default">
-        <div class="panel-body">
-
-          <div class="row">
-            <div class class="col-xs-12">
-              <p class="text-justify ph-1">
-                {{ current_problem.description }}
-              </p>
-            </div>
+        <div class="row">
+          <div class class="col-xs-12">
+            <p class="text-justify ph-1">
+            {{ currentProblem.description }}
+            </p>
           </div>
+        </div>
 
 
-          <div class="row">
-            <div class="col-xs-6">
-              <button ng-click="upvote(current_problem)" class="btn btn-success btn-block">
-                Definitely
-              </button>
-            </div>
-            <div class="col-xs-6">
-              <button ng-click="ignore()" class="btn btn-danger btn-block">
-                Meh
-              </button>
-            </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <button ng-click="upvote(currentProblem)" class="btn btn-success btn-block">
+              Definitely
+            </button>
+          </div>
+          <div class="col-xs-6">
+            <button ng-click="ignore()" class="btn btn-danger btn-block">
+              Meh
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-xs-1"></div>
   </div>
+  <div class="col-xs-1"></div>
 </div>

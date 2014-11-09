@@ -1,12 +1,9 @@
+/*
 body {
   padding-top: 70px;
   padding-bottom: 70px;
   background-image: url('../img/clouds.jpg');
 }
-
-/**
-Utilities class
- */
 
   .navbar-default .navbar-text.text-white {
     color: white;
@@ -24,9 +21,6 @@ Utilities class
     padding-left: 8.33333333%;
     padding-right: 8.33333333%;
   }
-  /**
-  Override
-   */
 
   .navbar {
     border: none;
@@ -37,33 +31,33 @@ Utilities class
   }
 
   .navbar-header {
-    padding-right: 5px; /* Are these too close to edge for touch? */
+    padding-right: 5px;
     padding-left: 5px;
     text-align: center;
   }
   .navbar-brand {
     float: none;
     display: block;
-    margin: 0 41px; /* Stay away from buttons */
-    font-size: 24px; /* Balance larger (easy to read) with smaller (more characters) */
+    margin: 0 41px;
+    font-size: 24px;
   }
   .navbar-btn {
-    width: 42px; /* Enforce same size regardless of which icon is used */
+    width: 42px;
   }
   .navbar .btn-link {
-    text-decoration: none; /* Buttons within navbars should not behave like links */
+    text-decoration: none;
   }
   .navbar i[class^="glyphicon-"] {
     font-size: 24px;
   }
 
   .scrollable {
-    /* Need this for fixed top navbar, instead of Bootstrap navbar-fixed-top; Until iOS 7 fixes positioning bug with iOS virtual keyboard */
     overflow: auto;
-    -webkit-overflow-scrolling: touch; /* Native style momentum scroll */
+    -webkit-overflow-scrolling: touch;
     position: absolute;
     top: 51px;
     bottom: 0px;
     left: 0px;
     right: 0px;
   }
+  //*/

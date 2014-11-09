@@ -57,13 +57,13 @@ angular.module('problemhunt')
 })
 .run(function($rootScope, $state, Auth) {
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
-    if (!Auth.isAuthorized(toState.access_level)) {
+    if (!Auth.isAuthorized(toState.accessLevel)) {
       evt.preventDefault();
       $state.go('login');
     }
     if (toState.name === 'login' && Auth.isAuthenticated()) {
       evt.preventDefault();
-      $state.go('cards');
+      $state.go('app.cards');
     }
   });
 });

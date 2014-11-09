@@ -1,35 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4"></div>
-    <div class="col-xs-4">
-      <img class="img-responsive mt-1" src="images/logo.png"/>
-    </div>
-    <div class="col-xs-4"></div>
+<div class="row">
+  <div class="col-xs-12 mt-1">
+
+    <form ng-submit="submit(problem)" role="form">
+      <div class="form-group">
+        <label>Something about @{{organization.name}} is bothering you? Be awesome and tell us about it!</label>
+        <input ng-model="problem.description" class="form-control" rows="5"></input>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-block btn-primary">
+          Am I the only one?
+        </button>
+      </div>
+      <div class="form-group">
+        <button ng-click="ignore()" class="btn btn-block btn-default">
+          Skip to results
+        </button>
+      </div>
+    </form>
+
   </div>
-  <div class="row">
-    <div class="col-xs-12 mt-1">
-
-      <form ng-submit="submit(problem)" role="form">
-        <div class="form-group">
-          <label>Something about @{{organization.name}} is bothering you? Be awesome and tell us about it!</label>
-          <input ng-model="problem.description" class="form-control" rows="5"></input>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-block btn-primary">
-            Am I the only one?
-          </button>
-        </div>
-        <div class="form-group">
-          <button ng-click="ignore()" class="btn btn-block btn-default">
-            Skip to results
-          </button>
-        </div>
-      </form>
-
-    </div>
-  </div>
-
-
-
 </div>
-

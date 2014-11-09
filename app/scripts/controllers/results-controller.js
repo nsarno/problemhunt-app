@@ -2,11 +2,11 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('results', {
+  $stateProvider.state('app.results', {
     url: '/results',
     templateUrl: 'partials/results.html',
     controller: 'ResultsController',
-    access_levels: ACCESS_LEVELS.user
+    accessLevels: ACCESS_LEVELS.user
   });
 })
 .controller('ResultsController', function($scope, Auth, Problem) {

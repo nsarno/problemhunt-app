@@ -8,7 +8,7 @@ angular.module('problemhunt')
 
     setupCards: function(callback) {
       Auth.user().then(function(response) {
-        _problemStack = _.clone(response.user.organization.problems)
+        _problemStack = _.clone(response.user.organization.problems);
         callback();
       });
     },
@@ -19,12 +19,12 @@ angular.module('problemhunt')
       while (!nextFound) {
         console.log('stack len', _problemStack.length);
         if (_problemStack.length === 0) {
-          $state.go('contribute');
+          $state.go('app.submit');
           return;
         } else {
           nextProblem = _problemStack.pop();
           console.log(nextProblem.upvoted);
-          if (nextProblem.upvoted == false) {
+          if (nextProblem.upvoted === false) {
             nextFound = true;
           }
         }
@@ -33,7 +33,7 @@ angular.module('problemhunt')
     },
 
     upvote: function(problem) {
-      Restangular.all('upvotes').post({ problem_id: problem.id, user_id: Auth.user().id });
+      Restangular.all('upvotes').post({ 'problem_id': problem.id, 'user_id': Auth.user().id });
     },
 
     submit: function(problem) {
@@ -45,7 +45,7 @@ angular.module('problemhunt')
     tops: function(callback) {
       Auth.user().then(function(response) {
         callback(_.sortBy(response.user.organization.problems, function(pb) {
-          return -pb.upvote_count; 
+          return -pb.upvote_count;
         }).slice(0, 15)); 
       });
     }

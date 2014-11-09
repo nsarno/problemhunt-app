@@ -18,5 +18,17 @@
   },
   "devDependencies": {
     "angular-mocks": "1.2.x"
+  },
+  "overrides": {
+    "angulartics": {
+      "main": [
+        "src/angulartics.js",
+        "src/angulartics-ga.js"
+      ],
+      "dependencies": {
+        "angular": ">= 1.1.5",
+        "SHA-1": "*"
+      }
+    }
   }
 }
