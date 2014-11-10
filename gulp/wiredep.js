@@ -8,14 +8,13 @@ gulp.task('wiredep', function () {
 
   gulp.src('app/styles/*.scss')
     .pipe(wiredep({
-        directory: 'app/bower_components'
+      directory: 'app/bower_components'
     }))
     .pipe(gulp.dest('app/styles'));
 
   gulp.src('app/*.html')
     .pipe(wiredep({
-      directory: 'app/bower_components',
-      exclude: ['bootstrap-sass-official']
+      directory: 'app/bower_components'
     }))
     .pipe(gulp.dest('app'));
 });

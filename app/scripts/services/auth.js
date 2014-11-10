@@ -61,10 +61,9 @@ angular.module('problemhunt')
       evt.preventDefault();
       $state.go('login');
     }
-    if (toState.name === 'login' && Auth.isAuthenticated()) {
+    if ((toState.name === 'login' || toState.name === 'register') && Auth.isAuthenticated()) {
       evt.preventDefault();
-      $state.go('app.cards');
+      $state.go('app');
     }
   });
 });
-

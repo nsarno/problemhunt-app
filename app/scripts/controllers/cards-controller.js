@@ -10,21 +10,21 @@ angular.module('problemhunt')
   });
 })
 .controller('CardController', function($scope, Problem, Auth) {
-  Auth.user().then(function(response) {
-    $scope.organization = response.user.organization;
-  });
+  // Auth.user().then(function(response) {
+  //   $scope.organization = response.user.organization;
+  // });
 
-  Problem.setupCards(function() {
-    $scope.currentProblem = Problem.next();
-  });
+  // Problem.setupCards(function() {
+  //   $scope.currentProblem = Problem.next();
+  // });
 
-  $scope.upvote = function(problem) {
-    Problem.upvote(problem);
-    $scope.currentProblem = Problem.next();
-  };
+  // $scope.upvote = function(problem) {
+  //   Problem.upvote(problem);
+  //   $scope.currentProblem = Problem.next();
+  // };
 
-  $scope.ignore = function() {
-    $scope.currentProblem = Problem.next();
-  };
+  // $scope.ignore = function() {
+  //   $scope.currentProblem = Problem.next();
+  // };
 });
 
