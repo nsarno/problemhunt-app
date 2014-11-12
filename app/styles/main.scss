@@ -4,17 +4,33 @@ html, body, #content {
 }
 
 /*
+** App layout
+*/
+
+.navbar {
+  padding: 0 5%;
+}
+
+#app-content {
+  margin-top: 50px;
+  padding-top: 20px;
+}
+
+form {
+  max-width: 330px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/*
 ** Login / Register
 */
 
 #login, #register {
   height: 100%;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .form-signin, .form-signup {
-  max-width: 330px;
   margin: 0 auto;
   padding: 15px;
 
@@ -33,13 +49,4 @@ html, body, #content {
       border-top-left-radius: 0;    
     }
   }
-}
-
-/*
-** App layout
-*/
-
-#app-content {
-  margin-top: 50px;
-  padding-top: 20px;
 }

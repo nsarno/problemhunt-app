@@ -6,11 +6,14 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="#">Problem Hunt</a>
+        <a class="navbar-brand" ui-sref="app">Problem Hunt</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="app.rooms.list" href="#"><i class="fa fa-comments"></i> Rooms</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a ng-click="logout()" href="#"><i class="fa fa-sign-out"></i></a></li>
+          <li><a ng-click="logout()" href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
         </ul>
       </div>  <!--/.nav-collapse -->
     </div>  <!--/.container-fluid -->

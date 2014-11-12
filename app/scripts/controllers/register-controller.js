@@ -10,10 +10,10 @@ angular.module('problemhunt')
   });
 })
 .controller('RegisterController', function($scope, $state, User, Auth) {
-  $scope.register = function(user_params) {
-    console.log('register', user_params);
-    User.create(user_params, function() {
-      Auth.login(user_params, function() {
+  $scope.register = function(newUser) {
+    console.log('register', newUser);
+    User.create(newUser, function() {
+      Auth.login(newUser, function() {
         $state.go('app.cards');
       });
     });

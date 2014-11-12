@@ -5,8 +5,8 @@ angular.module('problemhunt')
   var baseUsers = Restangular.all('users');
 
   return {
-    create: function(user_params, callback) {
-      baseUsers.post({'user': user_params}).then(function(response) {
+    create: function(newUser, callback) {
+      baseUsers.post({'user': newUser}).then(function(response) {
         callback();
       });
     }

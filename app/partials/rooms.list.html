@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Rooms</h2>
+  <hr>
+  <ul ng-if="!roomName" ng-repeat="room in rooms">
+    <li><a ui-sref="app.rooms.detail({roomName: room.name})">{{ room.name }}</a></li>
+  </ul>
+  <hr>
+  <form ng-submit="createRoom(room)" role="form">
+    <div class="form-group">
+      <input class="form-control" ng-model="room.name" type="text" name="name" placeholder="Room name" />
+    </div>
+    <div class="form-group">
+      <input class="form-control btn btn-primary" type="submit" value="Create your room" />
+    </div>
+  </form>
+</div>

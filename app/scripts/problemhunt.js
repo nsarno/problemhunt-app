@@ -21,14 +21,19 @@ angular.module('problemhunt', [
 .config(function($urlRouterProvider, $locationProvider, RestangularProvider,
       $stateProvider, BASE_URL) {
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('');
 
   // Set base url of problemhunt API
   RestangularProvider.setBaseUrl(BASE_URL);
 
   // Add interceptor to extract embbeded response
-  RestangularProvider.addResponseInterceptor(function (data, operation, what) {
+  RestangularProvider.addResponseInterceptor(function (data, operation, what, url, response) {
     if (operation === 'getList') {
+      // console.log(data);
+      // console.log(what);
+      // console.log(operation);
+      // console.log(url);
+      // console.log(response);
       return data[what];
     }
     return data;
