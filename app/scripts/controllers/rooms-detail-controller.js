@@ -10,5 +10,36 @@ angular.module('problemhunt')
   });
 })
 .controller('RoomsDetailController', function($scope, Room, $stateParams) {
-  $scope.roomName = $stateParams.roomName;
+  function fetchCurrentRoom() {
+    Room.findByName($stateParams.roomName).then(function(response) {
+      $scope.room = response[0];
+      console.log($scope.room);
+    });    
+  }
+
+  $scope.createProblem = function(room, newProblem) {
+    Room.createProblem(room, newProblem).then(function(response) {
+      fetchCurrentRoom();
+    });
+  };
+
+  $scope.deleteProblem = function(room, problem) {
+    Room.deleteProblem(room, problem).then(function(response) {
+      fetchCurrentRoom();
+    });
+  };
+
+  $scope.upvoteProblem = function(problem) {
+    Room.upvoteProblem(problem).then(function(response) {
+      fetchCurrentRoom();
+    });
+  };
+
+  $scope.downvoteProblem = function(problem) {
+    Room.downvoteProblem(problem).then(function(response) {
+      fetchCurrentRoom();
+    });
+  };  
+
+  fetchCurrentRoom();
 });

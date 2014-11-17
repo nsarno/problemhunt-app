@@ -11,5 +11,5 @@ angular.module('problemhunt')
   });
 })
 .controller('RoomsController', function($scope, Room) {
-
+  
 });

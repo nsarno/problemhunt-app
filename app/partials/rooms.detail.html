@@ -1,1 +1,24 @@
-<h2>{{ roomName }}</h2>
+<h2>{{ room.name }}</h2>
+
+<div ng-show="room.problems.length">
+  <table class="table table-striped">
+    <tr ng-repeat="problem in room.problems">
+      <td>{{ problem.description }}</td>
+      <td >{{ problem.upvotes_count }} upvote(s)</td>
+      <td >
+        <i ng-show="!problem.upvoted" ng-click="upvoteProblem(problem)" class="btn fa fa-caret-square-o-up"></i>
+        <i ng-show="problem.upvoted" ng-click="downvoteProblem(problem)" class="btn fa fa-caret-square-o-down"></i>
+        <i ng-show="problem.author" ng-click="deleteProblem(problem)" class="btn fa fa-remove"></i>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<form ng-submit="createProblem(room, problem)" role="form">
+  <div class="form-group">
+    <input class="form-control" ng-model="problem.description" type="text" name="description" placeholder="Problem description" />
+  </div>
+  <div class="form-group">
+    <input class="form-control btn btn-primary" type="submit" value="Submit your problem" />
+  </div>
+</form>

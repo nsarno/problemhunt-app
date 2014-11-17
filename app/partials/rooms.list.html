@@ -1,10 +1,15 @@
 <div class="container">
   <h2>Rooms</h2>
-  <hr>
-  <ul ng-if="!roomName" ng-repeat="room in rooms">
-    <li><a ui-sref="app.rooms.detail({roomName: room.name})">{{ room.name }}</a></li>
-  </ul>
-  <hr>
+
+  <table class="table">
+    <tr ng-if="!roomName" ng-repeat="room in rooms">
+      <td><a ui-sref="app.rooms.detail({roomName: room.name})">{{ room.name }}</a></td>
+      <td ng-show="!room.registered"><button ng-click="joinRoom(room)" class="btn btn-default">Join</button></td>
+      <td ng-show="room.registered"><button ng-click="leaveRoom(room)" class="btn btn-default">Leave</button></td>
+      <td ng-show="room.owner"><button ng-click="deleteRoom(room)" class="btn btn-default">Delete</button></td>
+    </tr>
+  </table>
+
   <form ng-submit="createRoom(room)" role="form">
     <div class="form-group">
       <input class="form-control" ng-model="room.name" type="text" name="name" placeholder="Room name" />

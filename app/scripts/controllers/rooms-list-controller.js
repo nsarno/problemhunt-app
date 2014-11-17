@@ -9,7 +9,7 @@ angular.module('problemhunt')
     accessLevel: ACCESS_LEVELS.user
   });
 })
-.controller('RoomsListController', function($scope, Room) {
+.controller('RoomsListController', function($scope, $state, Room) {
   function fetchRooms() {
     Room.all().then(function(rooms) {
       $scope.rooms = rooms;
@@ -18,6 +18,27 @@ angular.module('problemhunt')
 
   $scope.createRoom = function(newRoom) {
     Room.create(newRoom).then(function(response) {
+      console.log(response);
+      fetchRooms();
+    });
+  };
+
+  $scope.deleteRoom = function(room) {
+    Room.destroy(room).then(function(response) {
+      console.log(response);
+      fetchRooms();
+    });
+  };
+
+  $scope.joinRoom = function(room) {
+    Room.join(room).then(function(response) {
+      console.log(response);
+      fetchRooms();
+    });
+  };
+
+  $scope.leaveRoom = function(room) {
+    Room.leave(room).then(function(response) {
       console.log(response);
       fetchRooms();
     });

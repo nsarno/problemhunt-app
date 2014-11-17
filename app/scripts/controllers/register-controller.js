@@ -14,7 +14,7 @@ angular.module('problemhunt')
     console.log('register', newUser);
     User.create(newUser, function() {
       Auth.login(newUser, function() {
-        $state.go('app.cards');
+        $state.go('app');
       });
     });
   };

@@ -21,7 +21,7 @@ angular.module('problemhunt', [
 .config(function($urlRouterProvider, $locationProvider, RestangularProvider,
       $stateProvider, BASE_URL) {
 
-  $urlRouterProvider.otherwise('');
+  $urlRouterProvider.otherwise('/');
 
   // Set base url of problemhunt API
   RestangularProvider.setBaseUrl(BASE_URL);
