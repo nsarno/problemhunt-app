@@ -22,8 +22,8 @@ angular.module('problemhunt')
     });
   };
 
-  $scope.deleteProblem = function(room, problem) {
-    Room.deleteProblem(room, problem).then(function(response) {
+  $scope.deleteProblem = function(problem) {
+    Room.deleteProblem(problem).then(function(response) {
       fetchCurrentRoom();
     });
   };

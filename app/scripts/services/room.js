@@ -27,15 +27,15 @@ angular.module('problemhunt')
     },
 
     leave: function(room) {
-      return room.one('registrations', room.registration_id).remove();
+      return Restangular.one('registrations', room.registration_id).remove();
     },
 
     createProblem: function(room, newProblem) {
       return room.all('problems').post({'problem': newProblem});
     },
 
-    deleteProblem: function(room, problem) {
-      return room.one('problems', problem.id).remove();
+    deleteProblem: function(problem) {
+      return Restangular.one('problems', problem.id).remove();
     },
 
     upvoteProblem: function(problem) {
