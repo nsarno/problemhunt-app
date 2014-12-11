@@ -13,7 +13,7 @@ angular.module('problemhunt')
   $scope.login = function(params) {
     Auth.login(params, function() {
       $rootScope.user = { email: $scope.user.email };
-      $state.go('app.rooms'); 
+      $state.go('app.rooms.list'); 
     });
   };
 });

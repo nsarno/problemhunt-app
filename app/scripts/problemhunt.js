@@ -26,11 +26,6 @@ angular.module('problemhunt', [
   // Add interceptor to extract embbeded response
   RestangularProvider.addResponseInterceptor(function (data, operation, what, url, response) {
     if (operation === 'getList') {
-      // console.log(data);
-      // console.log(what);
-      // console.log(operation);
-      // console.log(url);
-      // console.log(response);
       return data[what];
     }
     return data;
