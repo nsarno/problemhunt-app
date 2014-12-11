@@ -14,10 +14,7 @@ angular.module('problemhunt', [
   pub: 1,
   user: 2
 })
-
-//.constant('BASE_URL', 'https://problemhunt.herokuapp.com')
-.constant('BASE_URL', 'http://0.0.0.0:8080')
-
+.constant('BASE_URL', 'https://problemhunt.herokuapp.com')
 .config(function($urlRouterProvider, $locationProvider, RestangularProvider,
       $stateProvider, BASE_URL) {
 
