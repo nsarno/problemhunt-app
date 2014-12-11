@@ -43,7 +43,6 @@ angular.module('problemhunt')
     },
 
     downvoteProblem: function(problem) {
-      console.log(problem);
       return Restangular.one('upvotes', problem.upvote_id).remove();
     }
   };

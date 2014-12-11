@@ -13,7 +13,6 @@ angular.module('problemhunt')
   function fetchCurrentRoom() {
     Room.findByName($stateParams.roomName).then(function(response) {
       $scope.room = response[0];
-      console.log($scope.room);
     });    
   }
 

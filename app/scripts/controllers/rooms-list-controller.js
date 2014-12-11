@@ -18,28 +18,24 @@ angular.module('problemhunt')
 
   $scope.createRoom = function(newRoom) {
     Room.create(newRoom).then(function(response) {
-      console.log(response);
       fetchRooms();
     });
   };
 
   $scope.deleteRoom = function(room) {
     Room.destroy(room).then(function(response) {
-      console.log(response);
       fetchRooms();
     });
   };
 
   $scope.joinRoom = function(room) {
     Room.join(room).then(function(response) {
-      console.log(response);
       fetchRooms();
     });
   };
 
   $scope.leaveRoom = function(room) {
     Room.leave(room).then(function(response) {
-      console.log(response);
       fetchRooms();
     });
   };

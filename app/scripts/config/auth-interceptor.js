@@ -16,7 +16,6 @@ angular.module('problemhunt')
 	  responseError: function (rejection) {
 	    switch (rejection.status) {
         case 401:
-          console.log(rejection.config.url);
           if (rejection.config.url !== BASE_URL + '/auth') {
             $rootScope.$broadcast('auth:loginRequired');
           }

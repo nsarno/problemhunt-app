@@ -11,7 +11,6 @@ angular.module('problemhunt')
 })
 .controller('RegisterController', function($scope, $state, User, Auth) {
   $scope.register = function(newUser) {
-    console.log('register', newUser);
     User.create(newUser, function() {
       Auth.login(newUser, function() {
         $state.go('app');
