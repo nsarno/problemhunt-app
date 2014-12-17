@@ -1,6 +1,5 @@
 <div id="login" class="container-fluid">
   <form class="form-signin" ng-submit="login(user)" role="form">
-    <h2>Please sign in</h2>
     <div class="form-group">
       <input class="form-control" ng-model="user.email" type="email" name="user" placeholder="Email address" />
     </div>
@@ -10,6 +9,8 @@
     <div class="form-group">
       <input class="form-control btn btn-primary" type="submit" value="Sign in" />
     </div>
-    <a ui-sref="register" href="#">I don't have an account yet.</a>
+    <div class="form-footer">
+      <a ui-sref="home.register" href="#">I don't have an account yet.</a>
+    </div>
   </form>
 </div>

@@ -2,7 +2,7 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('login', {
+  $stateProvider.state('home.login', {
     url: '/login',
     templateUrl: 'partials/login.html',
     controller: 'LoginController',

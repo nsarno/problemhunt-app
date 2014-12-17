@@ -2,7 +2,7 @@
 
 angular.module('problemhunt')
 .config(function($stateProvider, ACCESS_LEVELS) {
-  $stateProvider.state('register', {
+  $stateProvider.state('home.register', {
     url: '/register',
     templateUrl: 'partials/register.html',
     controller: 'RegisterController',

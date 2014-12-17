@@ -12,7 +12,7 @@ angular.module('problemhunt')
 .controller('AppController', function($scope, $state, Auth) {
   $scope.logout = function() {
     Auth.logout();
-    $state.go('login');
+    $state.go('home');
   };
 });
 
