@@ -59,9 +59,9 @@ angular.module('problemhunt')
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
     if (!Auth.isAuthorized(toState.accessLevel)) {
       evt.preventDefault();
-      $state.go('login');
+      $state.go('home');
     }
-    if ((toState.name === 'login' || toState.name === 'register') && Auth.isAuthenticated()) {
+    if ((toState.name === 'home.login' || toState.name === 'home.register') && Auth.isAuthenticated()) {
       evt.preventDefault();
       $state.go('app');
     }
