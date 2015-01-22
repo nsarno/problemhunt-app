@@ -23,11 +23,11 @@ angular.module('problemhunt')
     },
 
     join: function(room) {
-      return room.all('registrations').post();
+      return room.one('rooms', room.id).customPOST({}, 'follow');
     },
 
     leave: function(room) {
-      return Restangular.one('registrations', room.registration_id).remove();
+      return room.customDELETE('unfollow');
     },
 
     createProblem: function(room, newProblem) {
@@ -39,11 +39,11 @@ angular.module('problemhunt')
     },
 
     upvoteProblem: function(problem) {
-      return Restangular.one('problems', problem.id).all('upvotes').post();
+      return Restangular.one('problems', problem.id).customPOST({}, 'upvote');
     },
 
     downvoteProblem: function(problem) {
-      return Restangular.one('upvotes', problem.upvote_id).remove();
+      return Restangular.one('problems', problem.id).customDELETE('downvote');
     }
   };
 });
